@@ -17,9 +17,21 @@ class Admin extends CI_Controller
     {
         $data['dataabstrak']=$this->admin_model->abstrak();        
         $data['datahasil']=$this->admin_model->uji();
-        $data['dataabstrakhasil']=$this->admin_model->dataabstrak();
+        //$data['dataabstrakhasil']=$this->admin_model->dataabstrak();
         $this->load->view('admin/index',$data);
         
+    }
+
+    public function admin(){
+    	$data['dataadmin']=$this->admin_model->dataadmin();
+    	$this->load->view('admin/viewadmin',$data);
+    }
+
+    public function pengaturan()
+    {
+    	$data['data']=$this->admin_model->datapengaturan();
+    	$this->load->view('admin/viewpengaturan',$data);
+    	//print_r($data);
     }
     public function saveabstrak(){
     	$this->admin_model->savedataabstrak();

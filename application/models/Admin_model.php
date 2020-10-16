@@ -21,15 +21,26 @@ class Admin_model extends CI_Model
         return $result->row()->jumlah_abstrak;
     }
 
+
     public function uji()
     {
          $sql="SELECT count(id) as jumlah_uji FROM hasil_uji";
         $result=$this->db->query($sql);
         return $result->row()->jumlah_uji;
     }
+
+    public function dataadmin(){
+         return $this->db->get("admin")->result();
+    }
+
+
      public function dataabstrak()
     {
         return $this->db->get('abstrak_asli')->result();
+    }
+
+    public function datapengaturan(){
+       return $this->db->get('pengaturan')->result();
     }
 
    public function savedataabstrak(){

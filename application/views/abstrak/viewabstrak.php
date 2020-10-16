@@ -85,10 +85,42 @@
                 <!-- Container fluid  -->
                 <div class="container-fluid">
                     <!-- Start Page Content -->
-                    <?php
-                   $this->load->view('admin/dashboard');
+                     <div class="card">
+            <div class="card-body">
+                <h2 class="text-center">abstrak</h2>
+                <a class="btn button btn-success" href="?app=abstrak&act=addabstrak">tambah</a>
+                <div class="table-responsive m-t-10">
+                    <table id="myTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>no</th>
+                                <th style="text-align:center">judul skripsi</th>
+                                <th style="text-align:center">Abstrak</th>
+                                <th style="text-align:center">Aksi</th>
 
-                    ?>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 1;
+                            foreach ($dataabstrakhasil as $value) {
+                            ?>
+                                <tr>
+                                    <td><?= $no ?></td>
+                                    <td style="text-align:left"><?= $value->judul; ?></td>
+                                    <td style="text-align:left"><?= substr($value->abstrak, 0, 200) . '...'; ?></td>
+                                    <td style="width:12%;text-align:center;"><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="" class="btn btn-danger sweet-confirm"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                            <?php
+                                $no++;
+                            }
+                            ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
 
                     <!-- End PAge Content -->

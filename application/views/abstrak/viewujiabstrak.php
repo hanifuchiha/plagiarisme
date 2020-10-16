@@ -85,10 +85,49 @@
                 <!-- Container fluid  -->
                 <div class="container-fluid">
                     <!-- Start Page Content -->
-                    <?php
-                   $this->load->view('admin/dashboard');
+        <div class="card">
+                            <div class="card-body">
+                              <h2 class="text-center">Hasil Uji Cek Plagiarisme</h2>
+                                
+                                <div class="table-responsive m-t-10">
+                                    <table id="myTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>no</th>
+        <th style="text-align:center">judul skripsi Uji</th>
+        <th style="text-align:center">Judul skripsi Asli</th>
+        <th style="text-align:center">Tingkat Plagiarisme</th>
+      
 
-                    ?>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+    $no=1;
+        foreach ($dataabstrakhasil as $value) 
+            {
+               // echo var_dump($value);
+            ?>
+                                            <tr>
+                                                <td><?= $no ?></td>
+                                                <td style="text-align:left"><?php echo $value['judulbr'] ?></td>
+                                                <td style="text-align:left"><?= $value['judul'] ?></td>
+                                              <td style="text-align:center"><?= round($value['hasil'],2) ?> %</td>
+                                               
+                                            </tr>
+                                           
+                                            
+                                            <?php
+            $no++;
+    
+        }
+                                            ?>
+                                            
+                                        <tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
 
                     <!-- End PAge Content -->

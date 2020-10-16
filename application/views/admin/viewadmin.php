@@ -85,10 +85,48 @@
                 <!-- Container fluid  -->
                 <div class="container-fluid">
                     <!-- Start Page Content -->
-                    <?php
-                   $this->load->view('admin/dashboard');
+                    <div class="card">
+                            <div class="card-body">
+                              <h2 class="text-center">Admin Profil</h2>
+                                
+                                <div class="table-responsive m-t-10">
+                                    <table id="myTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>no</th>
+        <th style="text-align:center">Nama</th>
+        <th style="text-align:center">Username</th>
+        <th style="text-align:center">Aksi</th>
+       
+      
 
-                    ?>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+    $no=1;
+        foreach ($dataadmin as $value) 
+            {
+            ?>
+                                          
+                                             <tr>
+                                                <td><?= $no ?></td>
+                                                 <td style="text-align:left"><?= $value->nama; ?></td>
+                                                <td style="text-align:left"><?= $value->username; ?></td>
+                                              <td style="width:12%;text-align:center;"><a href=" " class="btn btn-success"><i class="fa fa-edit"></i></a></td>
+                                               
+                                            </tr>
+                                            <?php
+            $no++;
+    
+        }
+                                            ?>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
 
                     <!-- End PAge Content -->
