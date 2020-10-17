@@ -88,7 +88,7 @@
                      <div class="card">
             <div class="card-body">
                 <h2 class="text-center">abstrak</h2>
-                <a class="btn button btn-success" href="?app=abstrak&act=addabstrak">tambah</a>
+                <a class="btn button btn-success" href="<?php echo base_url('abstrak/add')?>">tambah</a>
                 <div class="table-responsive m-t-10">
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>

@@ -1,5 +1,5 @@
 <?php
-$this->load->view('config/function');
+//$this->load->view('config/function');
 ?>
 <!DOCTYPE html>
 <html lang="en">

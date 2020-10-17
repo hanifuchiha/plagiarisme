@@ -28,13 +28,12 @@ class Abstrak_model extends CI_Model
        /* $result=$this->db->query($sql);
         return $result->row()->result()*/;
     }
+    public function saveabstrakuji($data,$table){
+   $this->db->insert($table,$data);
+    }
 
-   public function savedataabstrak(){
-    $post=$this->input->post();
-    $this->id="";
-    $this->judul=$post["judul"];
-    $this->abstrak=$post["abstrak"];
-    return $this->db->insert("abstrak_asli", $this);
+   public function savedataabstrak($data,$table){
+    $this->db->insert($table,$data);
    }
   
 
